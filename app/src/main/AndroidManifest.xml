@@ -17,7 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.RegistryActivity" />
-        <activity android:name=".ui.TestActivity"></activity>
+        <activity android:name=".ui.TestActivity" />
+        <activity android:name=".ui.ProgressActivity"></activity>
     </application>
 
 </manifest>
