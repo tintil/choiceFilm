@@ -11,7 +11,7 @@ import java.util.List;
 
 public class PrincipeNandM {
 
-    public static int[] principeNandM(Matrix matrix){
+    public static int[] main(Matrix matrix){
         List<int[]> factorList = factorization(matrix.getMatrix(), matrix.getSize());
         return kernelAllocation(factorList, matrix.getMatrix(), matrix.getSize());
     }

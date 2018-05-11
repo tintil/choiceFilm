@@ -5,7 +5,8 @@ package com.diplom.ogromazina.choicefilm.data;
  */
 
 public class PrincipleOfNondomination {
-    public static void principeOfNondomination(int[][] matrix, int sizeOfMatrix, int[] relationships) {
+
+    public static void main(int[][] matrix, int sizeOfMatrix, int[] relationships) {
         boolean flag = true;
         int counter = 0;
         int check;
