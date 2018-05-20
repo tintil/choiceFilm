@@ -12,8 +12,7 @@ import java.util.List;
 public class PrincipleRanking {
 
     public static void main(Matrix matrix){
-
-
+        subtleRanking(roughRanking(matrix.getMatrix(), matrix.getSize()), matrix.getMatrix(), matrix.getSize());
     }
 
     private static List<int[]> roughRanking(int[][] matrix, int sizeOfMatrix){
@@ -32,26 +31,49 @@ public class PrincipleRanking {
         if (matrixDegrees2 == matrixDegrees3){
             for (int i = 0; i < sizeOfMatrix; i++){
                 for (int j = 0; j <= i; j++){
-                    matrix[j][i] = matrix[i][j];
+                    if (matrix[j][i] != matrix[i][j]){
+                        matrix[j][i] = Constants.dominated.index();
+                        matrix[i][j] = Constants.dominated.index();
+                    }
                 }
             }
         }
 
-        for (int i = 0; i < sizeOfMatrix; i++){
-            
-        }
-
         List<int[]> result = new ArrayList<>();
+        boolean isCircuit = true;
+        int sizeOfCircuit = 0;
+        int[] vertexes = new int[sizeOfMatrix];
+        for (int i = 0; i < sizeOfMatrix; i++){
+            for (int j = i; j >= 0; j--) {
+                if (matrix[i][j] == Constants.dominated.index() || matrix[j][i] == Constants.dominated.index()) {
+                    isCircuit = false;
+                    break;
+                }
+            }
+            if (!isCircuit){
+                isCircuit = true;
+                int[] tmp = new int[sizeOfCircuit];
+                for (int z = 0; z < sizeOfCircuit; z++){
+                    tmp[z] = vertexes[z];
+                    vertexes[z] = 0;
+                }
+                sizeOfCircuit = 0;
+                result.add(tmp);
+            } else {
+                vertexes[sizeOfCircuit] = i;
+                sizeOfCircuit++;
+            }
+        }
         return result;
     }
 
-    private static void subtleRanking(){
+    private static void subtleRanking(List<int[]> routhRankedList, int[][] matrix, int sizeOfMatrix){
 
     }
 
     private static int[][] multiplicationOfMatrix(int sizeOfMatrix, int[][] matrix1, int[][] matrix2){
         int[][] result = new int[sizeOfMatrix][sizeOfMatrix];
-        //TODO: перемножение матриц
+        
         return result;
     }
 }
