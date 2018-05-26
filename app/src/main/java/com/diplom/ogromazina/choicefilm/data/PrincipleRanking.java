@@ -15,7 +15,7 @@ public class PrincipleRanking {
         subtleRanking(roughRanking(matrix.getMatrix(), matrix.getSize()), matrix.getMatrix(), matrix.getSize());
     }
 
-    private static List<int[]> roughRanking(int[][] matrix, int sizeOfMatrix){
+    private static List<int[]> roughRanking(double[][] matrix, int sizeOfMatrix){
 
         for (int i = 0; i < sizeOfMatrix; i++){
             for (int j = 0; j < sizeOfMatrix; j++){
@@ -25,8 +25,8 @@ public class PrincipleRanking {
             }
         }
 
-        int[][] matrixDegrees2 = multiplicationOfMatrix(sizeOfMatrix, matrix, matrix);
-        int[][] matrixDegrees3 = multiplicationOfMatrix(sizeOfMatrix, matrixDegrees2, matrix);
+        double[][] matrixDegrees2 = multiplicationOfMatrix(sizeOfMatrix, matrix, matrix);
+        double[][] matrixDegrees3 = multiplicationOfMatrix(sizeOfMatrix, matrixDegrees2, matrix);
 
         if (matrixDegrees2 == matrixDegrees3){
             for (int i = 0; i < sizeOfMatrix; i++){
@@ -37,7 +37,7 @@ public class PrincipleRanking {
                     }
                 }
             }
-        }
+        }//TODO
 
         List<int[]> result = new ArrayList<>();
         boolean isCircuit = true;
@@ -67,13 +67,19 @@ public class PrincipleRanking {
         return result;
     }
 
-    private static void subtleRanking(List<int[]> routhRankedList, int[][] matrix, int sizeOfMatrix){
+    private static void subtleRanking(List<int[]> routhRankedList, double[][] matrix, int sizeOfMatrix){
 
     }
 
-    private static int[][] multiplicationOfMatrix(int sizeOfMatrix, int[][] matrix1, int[][] matrix2){
-        int[][] result = new int[sizeOfMatrix][sizeOfMatrix];
-        
+    private static double[][] multiplicationOfMatrix(int sizeOfMatrix, double[][] matrix1, double[][] matrix2){
+        double[][] result = new double[sizeOfMatrix][sizeOfMatrix];
+        for(int i = 0; i < sizeOfMatrix; i++) {
+            for (int j = 0; j < sizeOfMatrix; j++) {
+                result[i][j] = 0;
+                for (int k = 0; k < sizeOfMatrix; k++)
+                    result[i][j] += matrix1[i][k] * matrix2[k][j];
+            }
+        }
         return result;
     }
 }

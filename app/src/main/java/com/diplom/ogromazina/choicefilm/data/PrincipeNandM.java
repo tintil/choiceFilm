@@ -11,62 +11,29 @@ import java.util.List;
 
 public class PrincipeNandM {
 
+    private static boolean end = false;
+
     public static int[] main(Matrix matrix){
-        List<int[]> factorList = factorization(matrix.getMatrix(), matrix.getSize());
-        return kernelAllocation(factorList, matrix.getMatrix(), matrix.getSize());
+        List<int[]> subsets = divisionsIntoSubsets(preparation(matrix), matrix.getSize());
+        return findTheCore (subsets, preparation(matrix), matrix.getSize());
     }
 
-    public static List<int[]> factorization(int[][] matrix, int sizeOfMatrix){
-        List<int[]> result = new ArrayList<>();
-        int[] vertexes = new int [sizeOfMatrix];
-        int numOfVertex = 0;
-        boolean flagOfMissVertexRow;
-        boolean flagOfMissVertexCol;
-        int flagOfDominations;
-        while (numOfVertex != sizeOfMatrix){
-            flagOfMissVertexRow = false;
-            flagOfMissVertexCol = false;
-            flagOfDominations = 0;
-            for (int i = 0; i < sizeOfMatrix; i++){
-                for (int l : vertexes){
-                    if (i == l){
-                        flagOfMissVertexRow = true;
-                        break;
-                    }
-                }
-                if(flagOfMissVertexRow == true){
-                    continue;
-                }
-                for (int j = 0; j < sizeOfMatrix; j++){
-                    for (int m : vertexes){
-                        if (i == m){
-                            flagOfMissVertexCol = true;
-                            break;
-                        }
-                    }
-                    if(flagOfMissVertexCol == true){
-                        continue;
-                    }
-                    if (matrix[i][j] == Constants.dominance.index()){
-                        flagOfDominations++;
-                    }
-
-                }
-                if (flagOfDominations == 0){
-                    vertexes[numOfVertex] = i;
-                    numOfVertex++;
-                }
-            }
-            int[] tmp = new int[numOfVertex];
-            for (int k = 0; k < numOfVertex; k++){
-                tmp[k] = vertexes[k];
-            }
-            result.add(tmp);
+    private static List<int[]> divisionsIntoSubsets(double[][] matrix, int sizeOfMatrix){
+        int[][] table = new int[3][sizeOfMatrix];
+        int sizeOfTable = sizeOfMatrix;
+        for (int i = 0; i < sizeOfMatrix; i++) {
+            table[0][i] = i;
+            table[1][i] = -1;
+            table[2][i] = -1;
         }
+
+        refreshTable(table, sizeOfTable, matrix, sizeOfMatrix);
+        List<int[]> result = new ArrayList<>();
+        search(table, sizeOfTable, result, matrix, sizeOfMatrix);
         return result;
     }
 
-    public static int[] kernelAllocation(List<int[]> listOfDegrees, int[][] matrix, int sizeOfMatrix){
+    public static int[] findTheCore (List<int[]> listOfDegrees, double[][] matrix, int sizeOfMatrix){
         final int KERNEL = 1;
         final int NOT_KERNEL = -1;
         final int NOT_CHECKED = 0;
@@ -83,6 +50,7 @@ public class PrincipeNandM {
         for (int i = 1; i < listOfDegrees.size(); i++){
             for (int j = listOfDegrees.get(i-1).length; j < listOfDegrees.get(i).length; j++){
                 for (int k = 0; k < sizeOfMatrix; k++){
+                    isKernel = true;
                     if (result[k] == KERNEL && matrix[listOfDegrees.get(i)[j]][k] == Constants.dominance.index()){
                         isKernel = false;
                         break;
@@ -98,4 +66,195 @@ public class PrincipeNandM {
         return result;
     }
 
+    private static void search(int[][] table, int sizeOfTable, List<int[]> result, double[][] matrix, int sizeOfMatrix) {
+        while (!end) {
+            boolean flagNull = false;
+            for (int i = 0; i < sizeOfTable; i++) {
+                if (table[2][i] == 0) {
+                    flagNull = true;
+                    break;
+                }
+            }
+
+            if (flagNull) {
+                int[] nullVertexes = new int[sizeOfTable];
+                int countOfNull = 0;
+                for (int i = 0; i < sizeOfTable; i++) {
+                    if (table[2][i] == 0) {
+                        nullVertexes[countOfNull] = table[0][i];
+                        countOfNull++;
+                        for (int j = 0; j < sizeOfMatrix; j++) {
+                            matrix[j][table[0][i]] = Constants.dominated.index();
+                        }
+                    }
+                }
+                int[] tmp;
+                if (result.size() != 0) {
+                    int index = result.size();
+                    int sizeOfCurrentArray = result.get(index - 1).length;
+                    tmp = new int[countOfNull + sizeOfCurrentArray];
+                    for (int i = 0; i < countOfNull + sizeOfCurrentArray; i++) {
+                        if (i < sizeOfCurrentArray) {
+                            tmp[i] = result.get(index - 1)[i];
+                        }else {
+                            tmp[i] = nullVertexes[i - sizeOfCurrentArray];
+                        }
+                    }
+                } else {
+                    tmp = new int[countOfNull];
+                    for (int i = 0; i < countOfNull; i++) {
+                        tmp[i] = nullVertexes[i];
+                    }
+                }
+
+                result.add(tmp);
+                for (int i = 0; i < countOfNull; i++) {
+                    int j = 0;
+                    for (int z = 0; z < sizeOfTable; z++) {
+                        if (table[0][z] == nullVertexes[i]) {
+                            j = z;
+                            break;
+                        }
+                    }
+                    for (int z = j ; z < sizeOfTable - 1; z++) {
+                        table[0][z] = table[0][z + 1];
+                        table[1][z] = table[1][z + 1];
+                        table[2][z] = table[2][z + 1];
+                    }
+                    sizeOfTable--;
+                    if (sizeOfTable == 0) {
+                        end = true;
+                    }
+                }
+                refreshTable(table, sizeOfTable, matrix, sizeOfMatrix);
+                search(table, sizeOfTable, result, matrix, sizeOfMatrix);
+            } else {
+                int[] minVertexes = new int[sizeOfTable];
+                int min;
+                int countOfMin = 1;
+                min = table[2][0];
+                minVertexes[0] = table[0][0];
+                for (int i = 1; i < sizeOfTable; i++) {
+                    if (table[2][i] < min) {
+                        countOfMin = 0;
+                        min = table[2][i];
+                        minVertexes[countOfMin] = table[0][i];
+                        countOfMin++;
+                    }
+                    if (table[2][i] == min) {
+                        minVertexes[countOfMin] = table[0][i];
+                        countOfMin++;
+                    }
+                }
+
+                if (countOfMin == 1) {
+                    for (int j = 0; j < sizeOfMatrix; j++) {
+                        matrix[minVertexes[0]][j] = Constants.dominated.index();
+                    }
+                    table[2][minVertexes[0]] = 0;
+                    refreshTable(table, sizeOfTable, matrix, sizeOfMatrix);
+                    search(table, sizeOfTable, result, matrix, sizeOfMatrix);
+                } else {
+                    boolean flagInNull = false;
+                    boolean flagNotFoundNull = true;
+                    int[][] newTable = new int[3][sizeOfTable];
+                    for (int z = 0 ; z < sizeOfTable; z++) {
+                        newTable[0][z] = table[0][z];
+                        newTable[1][z] = table[1][z];
+                        newTable[2][z] = table[2][z];
+                    }
+                    double[][] newMatrix = new double[sizeOfMatrix][sizeOfMatrix];
+                    for (int i = 0; i < sizeOfMatrix; i++) {
+                        for (int j = 0; j < sizeOfMatrix; j++) {
+                            newMatrix[i][j] = matrix[i][j];
+                        }
+                    }
+
+                    for (int i = 0; i < countOfMin; i++) {
+                        for (int j = 0; j < sizeOfMatrix; j++) {
+                            newMatrix[minVertexes[i]][j] = Constants.dominated.index();
+                        }
+                        newTable[2][minVertexes[i]] = 0;
+                        refreshTable(newTable, sizeOfTable, newMatrix, sizeOfMatrix);
+                        for (int k = 0; k < sizeOfTable; k++) {
+                            if (newTable[1][k] == 0) {
+                                flagInNull = true;
+                                break;
+                            }
+                        }
+                        if (flagInNull) {
+                            flagNotFoundNull = false;
+                            search(newTable, sizeOfTable, result, newMatrix, sizeOfMatrix);
+                            break;
+                        } else {
+                            for (int z = 0 ; z < sizeOfTable - 1; z++) {
+                                newTable[0][z] = table[0][z];
+                                newTable[1][z] = table[1][z];
+                                newTable[2][z] = table[2][z];
+                            }
+                            for (int m = 0; m < sizeOfMatrix; m++) {
+                                for (int j = 0; j < sizeOfMatrix; j++) {
+                                    newMatrix[m][j] = matrix[m][j];
+                                }
+                            }
+                        }
+                    }
+                    if (flagNotFoundNull) {
+                        for (int j = 0; j < sizeOfMatrix; j++) {
+                            matrix[minVertexes[0]][j] = Constants.dominated.index();
+                        }
+                        table[2][minVertexes[0]] = 0;
+                        refreshTable(table, sizeOfTable, matrix, sizeOfMatrix);
+                        search(table, sizeOfTable, result, matrix, sizeOfMatrix);
+                    }
+                }
+            }
+        }
+    }
+
+    private static double[][] preparation (Matrix matrix){
+        double[][] mat = new double[matrix.getSize()][matrix.getSize()];
+        for (int i = 0; i < matrix.getSize(); i++) {
+            for (int j = 0; j < matrix.getSize(); j++) {
+                mat[i][j] = matrix.getValue(i,j);
+            }
+        }
+
+        for (int i = 0; i < matrix.getSize(); i++) {
+            for (int j = i; j < matrix.getSize(); j++) {
+                if (i == j){
+                    mat[i][j] = Constants.dominated.index();
+                }
+                if (mat[i][j] == Constants.nocomparable.index() || mat[i][j] == Constants.indifference.index()){
+                    mat[i][j] = Constants.dominated.index();
+                }
+                if(mat[i][j] == Constants.dominance.index() || mat[j][i] == Constants.dominance.index()) {
+                    double tmp;
+                    tmp = mat[i][j];
+                    mat[i][j] = mat[j][i];
+                    mat[j][i] = tmp;
+                }
+            }
+        }
+        return mat;
+    }
+
+    private static void refreshTable(int[][] table, int size, double[][] matrix, int sizeOfMatrix){
+        int countOfIn;
+        int countOfOut;
+        for (int i = 0; i < size; i++) {
+            countOfIn = 0;
+            countOfOut = 0;
+            for(int j = 0; j < sizeOfMatrix; j++) {
+                if (matrix[table[0][i]][j] == Constants.dominance.index()) {
+                    countOfOut++;
+                }
+                if (matrix[j][table[0][i]] == Constants.dominance.index()) {
+                    countOfIn++;
+                }
+            }
+            table[1][i] = countOfIn;
+            table[2][i] = countOfOut;
+        }
+    }
 }

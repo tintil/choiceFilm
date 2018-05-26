@@ -8,7 +8,7 @@ import com.diplom.ogromazina.choicefilm.data.utils.Constants;
 
 public class Matrix {
     private static final int FIRST_MATRIX_NUM_ITEM = 7;
-    private int[][] matrix;
+    private double[][] matrix;
     public boolean isTransitive;
     public boolean isLinear;
     private int sizeOfMatrix;
@@ -16,7 +16,7 @@ public class Matrix {
 
     public Matrix(){
         sizeOfMatrix = FIRST_MATRIX_NUM_ITEM;
-        matrix = new int[FIRST_MATRIX_NUM_ITEM][FIRST_MATRIX_NUM_ITEM];
+        matrix = new double[FIRST_MATRIX_NUM_ITEM][FIRST_MATRIX_NUM_ITEM];
         for (int i = 0; i < FIRST_MATRIX_NUM_ITEM; i++){
             for (int j = 0; j < FIRST_MATRIX_NUM_ITEM; j++){
                 if (i != j) {
@@ -30,7 +30,7 @@ public class Matrix {
 
     public Matrix(int numOfItems){
         sizeOfMatrix = numOfItems;
-        matrix = new int[numOfItems][numOfItems];
+        matrix = new double[numOfItems][numOfItems];
         for (int i = 0; i < numOfItems; i++){
             for (int j = 0; j < numOfItems; j++){
                 if (i != j) {
@@ -42,14 +42,14 @@ public class Matrix {
         }
     }
 
-    public Matrix(int[][] matrix, boolean isTransitive, boolean isLinear, int sizeOfMatrix){
+    public Matrix(double[][] matrix, boolean isTransitive, boolean isLinear, int sizeOfMatrix){
         this.matrix = matrix;
         this.isTransitive = isTransitive;
         this.isLinear = isLinear;
         this.sizeOfMatrix = sizeOfMatrix;
     }
 
-    public int[][] getMatrix(){
+    public double[][] getMatrix(){
         return matrix;
     }
 
@@ -65,7 +65,7 @@ public class Matrix {
         return sizeOfMatrix;
     }
 
-    public int[] full (int i, int j, int value){
+    public int[] full (int i, int j, double value){
         if (value == Constants.dominance.index()){
             matrix[i][j] = Constants.dominance.index();
             matrix[j][i] = Constants.dominated.index();
@@ -122,16 +122,16 @@ public class Matrix {
 
     private void isLinear(){
         isLinear = true;
-        for (int[] i : matrix){
-            for (int j : i){
-                if (i[j]== Constants.nocomparable.index()){
+        for (int i = 0; i < sizeOfMatrix; i++){
+            for (int j = 0; j < sizeOfMatrix; j++){
+                if (matrix[i][j]== Constants.nocomparable.index()){
                     isLinear = false;
                 }
             }
         }
     }
 
-    public int getValue (int x, int y){
+    public double getValue (int x, int y){
         return matrix[x][y];
     }
 }

@@ -8,15 +8,15 @@ public enum Constants {
     indifference(-1),
     dominance(1),
     dominated(0),
-    nocomparable(2);
+    nocomparable(0.5);
 
-    private final int index;
+    private final double index;
 
-    Constants(int index) {
+    Constants(double index) {
         this.index = index;
     }
 
-    public int index() {
+    public double index() {
         return index;
     }
 
