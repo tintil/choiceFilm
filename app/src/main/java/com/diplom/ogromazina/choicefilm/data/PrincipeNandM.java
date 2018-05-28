@@ -9,16 +9,35 @@ import java.util.List;
  * Created by OGromazina on 5/5/2018.
  */
 
-public class PrincipeNandM {
+public class PrincipeNandM extends APrincipe{
 
-    private static boolean end = false;
-
-    public static int[] main(Matrix matrix){
-        List<int[]> subsets = divisionsIntoSubsets(preparation(matrix), matrix.getSize());
-        return findTheCore (subsets, preparation(matrix), matrix.getSize());
+    PrincipeNandM(Matrix matrix) {
+        super(matrix);
     }
 
-    private static List<int[]> divisionsIntoSubsets(double[][] matrix, int sizeOfMatrix){
+    private boolean end = false;
+
+    public void main(){
+        List<int[]> subsets = divisionsIntoSubsets(preparation(matrix), matrix.getSize());
+        int[] tmp = findTheCore (subsets, preparation(matrix), matrix.getSize());
+        int c = 0;
+        for (int i = 0; i < matrix.getSize(); i++) {
+            if (tmp[i] == 1) {
+                c++;
+            }
+        }
+
+        result = new int[c];
+        c = 0;
+        for (int i = 0; i < matrix.getSize(); i++) {
+            if (tmp[i] == 1) {
+                result[c] = i + 1;
+                c++;
+            }
+        }
+    }
+
+    private List<int[]> divisionsIntoSubsets(double[][] matrix, int sizeOfMatrix){
         int[][] table = new int[3][sizeOfMatrix];
         int sizeOfTable = sizeOfMatrix;
         for (int i = 0; i < sizeOfMatrix; i++) {
@@ -33,7 +52,7 @@ public class PrincipeNandM {
         return result;
     }
 
-    public static int[] findTheCore (List<int[]> listOfDegrees, double[][] matrix, int sizeOfMatrix){
+    private int[] findTheCore (List<int[]> listOfDegrees, double[][] matrix, int sizeOfMatrix){
         final int KERNEL = 1;
         final int NOT_KERNEL = -1;
         final int NOT_CHECKED = 0;
@@ -66,7 +85,7 @@ public class PrincipeNandM {
         return result;
     }
 
-    private static void search(int[][] table, int sizeOfTable, List<int[]> result, double[][] matrix, int sizeOfMatrix) {
+    private  void search(int[][] table, int sizeOfTable, List<int[]> result, double[][] matrix, int sizeOfMatrix) {
         while (!end) {
             boolean flagNull = false;
             for (int i = 0; i < sizeOfTable; i++) {
@@ -212,7 +231,7 @@ public class PrincipeNandM {
         }
     }
 
-    private static double[][] preparation (Matrix matrix){
+    private double[][] preparation (Matrix matrix){
         double[][] mat = new double[matrix.getSize()][matrix.getSize()];
         for (int i = 0; i < matrix.getSize(); i++) {
             for (int j = 0; j < matrix.getSize(); j++) {
@@ -239,7 +258,7 @@ public class PrincipeNandM {
         return mat;
     }
 
-    private static void refreshTable(int[][] table, int size, double[][] matrix, int sizeOfMatrix){
+    private void refreshTable(int[][] table, int size, double[][] matrix, int sizeOfMatrix){
         int countOfIn;
         int countOfOut;
         for (int i = 0; i < size; i++) {

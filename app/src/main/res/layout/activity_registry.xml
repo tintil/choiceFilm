@@ -15,7 +15,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <LinearLayout
-            android:id="@+id/llHeadResAct"
+            android:id="@+id/llHeadStatAct"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
@@ -47,7 +47,7 @@
             android:text="@string/name"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/llHeadResAct" />
+            app:layout_constraintTop_toBottomOf="@+id/llHeadStatAct" />
 
         <EditText
             android:id="@+id/etSurnameActReg"

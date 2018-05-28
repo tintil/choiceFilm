@@ -7,7 +7,7 @@
     tools:context="com.diplom.ogromazina.choicefilm.ui.ResultActivity">
 
     <LinearLayout
-        android:id="@+id/llHeadResAct"
+        android:id="@+id/llHeadStatAct"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:orientation="horizontal"
@@ -45,7 +45,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="@id/btnStatistocResAct"
+        app:layout_constraintBottom_toTopOf="@id/btnResAct"
         app:layout_constraintTop_toTopOf="parent">
 
         <ImageView
@@ -54,7 +54,7 @@
             android:layout_height="150dp"
             android:layout_marginBottom="40dp"
             android:layout_marginTop="50dp"
-            app:layout_constraintBottom_toTopOf="@+id/btnStatistocResAct"
+            app:layout_constraintBottom_toTopOf="@+id/btnResAct"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -92,15 +92,15 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/btnStatistocResAct"
+        android:id="@+id/btnResAct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="10dp"
         android:layout_marginEnd="75dp"
         android:layout_marginStart="75dp"
+        android:background="@color/colorPrimaryDark"
         android:text="@string/statistic"
         android:textColor="@color/white"
-        android:background="@color/colorPrimaryDark"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

@@ -15,9 +15,14 @@
     <string name="save">Сохранить</string>
     <string name="skip">Пропустить</string>
     <string name="statistic">Статистика</string>
+    <string name="passTest">Пройти тест</string>
 
     <string name="headOfTests">Что для вас предпочтительнее?</string>
     <string name="mainOnResultPage">Вы еще не указали свои предпочтения</string>
     <string name="notChoiceble">Не могу выбрать</string>
+    <string name="title_activity_t">TActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_notifications">Notifications</string>
 
 </resources>
