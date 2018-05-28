@@ -17,7 +17,7 @@ public abstract class APrincipe {
    }
    
    public void printMatrix() {
-       System.out.println("\n--------------------�������� �������--------------------\n");
+       System.out.println("\n--------------------Исходная матрица--------------------\n");
        for (int i = 0; i < matrix.getSize(); i++)
        {
            for (int j = 0; j < matrix.getSize(); j++)
@@ -30,7 +30,7 @@ public abstract class APrincipe {
    }
    
    public void printResult() {
-       System.out.println("\n--------------------���������--------------------\n");
+       System.out.println("\n--------------------Результат--------------------\n");
        for (int i = 0; i < result.length; i++) {
            System.out.print(Integer.toString(result[i])  + " ");
        }
