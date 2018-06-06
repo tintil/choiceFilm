@@ -45,6 +45,7 @@
         android:layout_marginBottom="8dp"
         android:layout_marginTop="20dp"
         android:orientation="vertical"
+        android:visibility="visible"
         app:layout_constraintBottom_toTopOf="@id/btnResAct"
         app:layout_constraintTop_toTopOf="parent">
 
@@ -76,6 +77,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
+        android:visibility="invisible"
         app:layout_constraintTop_toTopOf="parent">
 
         <ListView
@@ -99,7 +101,7 @@
         android:layout_marginEnd="75dp"
         android:layout_marginStart="75dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/statistic"
+        android:text="@string/passTest"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

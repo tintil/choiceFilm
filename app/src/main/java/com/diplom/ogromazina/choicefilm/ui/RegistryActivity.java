@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.widget.Toast;
 
 import com.diplom.ogromazina.choicefilm.R;
+import com.diplom.ogromazina.choicefilm.conroller.Controller;
 import com.diplom.ogromazina.choicefilm.data.Profile;
 import com.diplom.ogromazina.choicefilm.data.utils.Sex;
 
@@ -86,6 +87,7 @@ public class RegistryActivity extends AppCompatActivity{
                    toast.show();
                }else{
                    if (rbFemale.isChecked()) {
+                       Controller.Inst().logInTrue();
                        Profile.getInstance().setData(etName.getText().toString(),
                                etSurname.getText().toString(), Sex.female,
                                Integer.parseInt(etBirth.getText().toString().substring(0,2)),
@@ -93,6 +95,7 @@ public class RegistryActivity extends AppCompatActivity{
                                Integer.parseInt(etBirth.getText().toString().substring(6)),
                                etOccupation.getText().toString());
                    }else {
+                       Controller.Inst().logInTrue();
                        Profile.getInstance().setData(etName.getText().toString(),
                                etSurname.getText().toString(), Sex.male,
                                Integer.parseInt(etBirth.getText().toString().substring(0,2)),
@@ -102,6 +105,7 @@ public class RegistryActivity extends AppCompatActivity{
                    }
                    Intent intent = new Intent(RegistryActivity.this, ResultActivity.class);
                    startActivity(intent);
+
                    finish();
                }
            }

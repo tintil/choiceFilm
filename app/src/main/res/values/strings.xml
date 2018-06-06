@@ -16,13 +16,31 @@
     <string name="skip">Пропустить</string>
     <string name="statistic">Статистика</string>
     <string name="passTest">Пройти тест</string>
+    <string name="next">Следующий</string>
 
-    <string name="headOfTests">Что для вас предпочтительнее?</string>
     <string name="mainOnResultPage">Вы еще не указали свои предпочтения</string>
-    <string name="notChoiceble">Не могу выбрать</string>
-    <string name="title_activity_t">TActivity</string>
-    <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="testActivityCheck">Отметьте те пункты, которые для вас наиболее предпочтительны</string>
+
+    <string name="genre">Жанр</string>
+    <string name="cast">Актёрский состав</string>
+    <string name="country">Страна</string>
+    <string name="duration">Длительность</string>
+    <string name="year">Год выхода</string>
+    <string name="rating">Рейтинг кинокритиков</string>
+    <string name="reviews">Отзывы зрителей</string>
+
+    <!-- .............................GENRES............................. -->
+    <string name="thriller">триллер</string>
+    <string name="western">вестерн</string>
+    <string name="detective">детектив</string>
+    <string name="documentary">документальный</string>
+    <string name="drama">драма</string>
+    <string name="comedy">комедия</string>
+    <string name="melodrama">мелодрама</string>
+    <string name="cartoon">мультфильм</string>
+    <string name="musical">мюзикл</string>
+    <string name="adventure">приключения</string>
+    <string name="horrors">ужасы</string>
+    <string name="fantastic">фантастика</string>
 
 </resources>

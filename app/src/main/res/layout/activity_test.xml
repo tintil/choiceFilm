@@ -7,70 +7,252 @@
     tools:context="com.diplom.ogromazina.choicefilm.ui.TestActivity"
     android:background="@color/white">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:gravity="center_vertical|center_horizontal|center"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="@string/headOfTests"
-            android:textAlignment="center"
-            android:textSize="30sp" />
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btnFirstChoiceActTest"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:textSize="18sp" />
-
-            <Button
-                android:id="@+id/btnSecondChoiceActTest"
-                android:layout_width="wrap_content"
-                android:layout_height="140dp"
-                android:layout_weight="1"
-                android:background="@color/white"
-                android:textSize="18sp" />
-        </LinearLayout>
-
-        <Button
-            android:id="@+id/btnNoChoicableTestAct"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:background="@color/white"
-            android:text="@string/notChoiceble"
-            android:textAlignment="center"
-            android:textSize="14sp" />
-
-    </LinearLayout>
-
     <Button
         android:id="@+id/btnSkipTestAct"
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_marginBottom="10dp"
-        android:layout_marginEnd="150dp"
-        android:layout_marginStart="150dp"
+        android:layout_marginEnd="75dp"
+        android:layout_marginStart="75dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/skip"
+        android:text="@string/next"
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/llGenreTestAct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnSkipTestAct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvGenreTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/genre"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvCommentTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:text="@string/testActivityCheck" />
+
+        <LinearLayout
+            android:id="@+id/llCheckBoxesTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llLeftCheckBoxesTestAct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|start"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbThrillerTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/thriller" />
+
+                <CheckBox
+                    android:id="@+id/cbWesternTeastAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/western" />
+
+                <CheckBox
+                    android:id="@+id/cbDetectiveTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detective" />
+
+                <CheckBox
+                    android:id="@+id/cbDocumentaryTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/documentary" />
+
+                <CheckBox
+                    android:id="@+id/cbDranaTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/drama" />
+
+                <CheckBox
+                    android:id="@+id/cbComedyTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/comedy" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRightCheckBoxesTestAct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|end"
+                android:orientation="vertical">
+
+                <CheckBox
+                    android:id="@+id/cbMelodramaTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/melodrama" />
+
+                <CheckBox
+                    android:id="@+id/cbCartoonTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cartoon" />
+
+                <CheckBox
+                    android:id="@+id/cbMusicalTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/musical" />
+
+                <CheckBox
+                    android:id="@+id/cbAdventureTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/adventure" />
+
+                <CheckBox
+                    android:id="@+id/cbHorrorTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/horrors" />
+
+                <CheckBox
+                    android:id="@+id/cbfantasticTestAct"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/fantastic" />
+
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCastTestAct"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:orientation="vertical"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnSkipTestAct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvCastTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/cast"
+            android:textAlignment="center"
+            android:textSize="24sp"
+            android:visibility="visible" />
+
+        <TextView
+            android:id="@+id/tvCommentCastTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:text="@string/testActivityCheck" />
+
+        <LinearLayout
+            android:id="@+id/llCBCastTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/llLeftCBCastTestAct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="left|start"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llRightCBCastTestAct"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="right|end"
+                android:orientation="vertical">
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llCountryTestAct"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="30dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="60dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toTopOf="@+id/btnSkipTestAct"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/tvCountryTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/country"
+            android:textAlignment="center"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/tvCommentCountryTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="bottom|center"
+            android:text="@string/testActivityCheck" />
+
+        <LinearLayout
+            android:id="@+id/llCBCountryTestAct"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:baselineAligned="false"
+            android:gravity="center_vertical|center_horizontal|center"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </LinearLayout>
 
 </android.support.constraint.ConstraintLayout>

@@ -9,6 +9,7 @@ import android.widget.ImageButton;
 import android.widget.LinearLayout;
 
 import com.diplom.ogromazina.choicefilm.R;
+import com.diplom.ogromazina.choicefilm.conroller.Controller;
 import com.diplom.ogromazina.choicefilm.data.Profile;
 
 public class ResultActivity extends AppCompatActivity implements View.OnClickListener{
@@ -22,11 +23,12 @@ public class ResultActivity extends AppCompatActivity implements View.OnClickLis
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_result);
+        Intent intent;
 
-        /*if (Profile.getInstance().getName() == null){
-            Intent intent = new Intent(ResultActivity.this, RegistryActivity.class);
-            startActivity(intent);
-        }*/
+        if (Controller.Inst().isLogIn() == false){
+            intent = new Intent(this, RegistryActivity.class);
+            startActivityForResult(intent, 1);
+        }
 
         if (Profile.getInstance().getMatrix() == null){
             llNotResultResAct = findViewById(R.id.llNotResultResAct);
