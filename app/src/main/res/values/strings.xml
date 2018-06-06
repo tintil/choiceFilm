@@ -11,6 +11,7 @@
     <string name="female">Женщина</string>
     <string name="birthday">ДД.ММ.ГГГГ</string>
     <string name="work">Род деятельности</string>
+    <string name="durationEdit">Длительность(минуты)</string>
 
     <string name="save">Сохранить</string>
     <string name="skip">Пропустить</string>
@@ -20,6 +21,9 @@
 
     <string name="mainOnResultPage">Вы еще не указали свои предпочтения</string>
     <string name="testActivityCheck">Отметьте те пункты, которые для вас наиболее предпочтительны</string>
+    <string name="testActivityRB">Выберите самый лучший из предложенных пунктов</string>
+    <string name="testActivityYear">Введите промежуток времени</string>
+    <string name="timeEdit">Введите желаемую продолжительность (в минутах)</string>
 
     <string name="genre">Жанр</string>
     <string name="cast">Актёрский состав</string>
@@ -42,5 +46,20 @@
     <string name="adventure">приключения</string>
     <string name="horrors">ужасы</string>
     <string name="fantastic">фантастика</string>
+
+    <!-- .............................RATINGS............................. -->
+    <string name="p90"> > 90 </string>
+    <string name="p80"> > 80 </string>
+    <string name="p70"> > 70 </string>
+    <string name="p60"> > 60 </string>
+    <string name="p50"> > 50 </string>
+    <string name="p40"> > 40 </string>
+    <string name="p30"> > 30 </string>
+    <string name="p20"> > 20 </string>
+    <string name="p10"> > 10 </string>
+
+    <!-- .............................YEARS............................. -->
+    <string name="start">Начало</string>
+    <string name="end">Конец</string>
 
 </resources>
