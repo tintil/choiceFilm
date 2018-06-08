@@ -1,0 +1,26 @@
+[
+  {
+    "id_country" : "0",
+    "name" : "США"
+  },
+  {
+    "id_country" : "1",
+    "name" : "СССР"
+  },
+  {
+    "id_country" : "2",
+    "name" : "Франция"
+  },
+  {
+    "id_country" : "3",
+    "name" : "Великобритания"
+  },
+  {
+    "id_country" : "4",
+    "name" : "Италия"
+  },
+  {
+    "id_country" : "5",
+    "name" : "Россия"
+  }
+]

@@ -1,0 +1,263 @@
+[
+  {
+    "id_film" : "0",
+    "name" : "Король Лев",
+    "year" : "1994",
+    "rating" : "93",
+    "reviews" : "88",
+    "duration" : "88",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "1",
+    "name" : "Зверополис",
+    "year" : "2016",
+    "rating" : "98",
+    "reviews" : "83",
+    "duration" : "108",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "2",
+    "name" : "Побег из Шоушенка",
+    "year" : "1994",
+    "rating" : "91",
+    "reviews" : "91",
+    "duration" : "142",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "3",
+    "name" : "Иван Васильевич меняет профессию",
+    "year" : "1973",
+    "rating" : "75",
+    "reviews" : "88",
+    "duration" : "88",
+    "id_country" : "1"
+  },
+  {
+    "id_film" : "4",
+    "name" : "Операция Ы и другие приключения Шурика",
+    "year" : "1965",
+    "rating" : "72",
+    "reviews" : "87",
+    "duration" : "95",
+    "id_country" : "1"
+  },
+  {
+    "id_film" : "5",
+    "name" : "Леон",
+    "year" : "1994",
+    "rating" : "71",
+    "reviews" : "87",
+    "duration" : "133",
+    "id_country" : "2"
+  },
+  {
+    "id_film" : "6",
+    "name" : "Доктор Фауст",
+    "year" : "2012",
+    "rating" : "69",
+    "reviews" : "85",
+    "duration" : "147",
+    "id_country" : "3"
+  },
+  {
+    "id_film" : "7",
+    "name" : "Хороший, плохой, злой",
+    "year" : "1966",
+    "rating" : "97",
+    "reviews" : "85",
+    "duration" : "178",
+    "id_country" : "4"
+  },
+  {
+    "id_film" : "8",
+    "name" : "Большой Куш",
+    "year" : "2000",
+    "rating" : "73",
+    "reviews" : "85",
+    "duration" : "104",
+    "id_country" : "3"
+  },
+  {
+    "id_film" : "9",
+    "name" : "Бриллиантовая рука",
+    "year" : "1968",
+    "rating" : "85",
+    "reviews" : "85",
+    "duration" : "94",
+    "id_country" : "1"
+  },
+  {
+    "id_film" : "10",
+    "name" : "Укращение строптивого",
+    "year" : "1980",
+    "rating" : "84",
+    "reviews" : "84",
+    "duration" : "104",
+    "id_country" : "4"
+  },
+  {
+    "id_film" : "11",
+    "name" : "Наша Маша и Волшебный орех",
+    "year" : "2009",
+    "rating" : "10",
+    "reviews" : "17",
+    "duration" : "72",
+    "id_country" : "5"
+  },
+  {
+    "id_film" : "12",
+    "name" : "Джуди",
+    "year" : "2014",
+    "rating" : "15",
+    "reviews" : "29",
+    "duration" : "80",
+    "id_country" : "4"
+  },
+  {
+    "id_film" : "13",
+    "name" : "Баки Ларсон: Рождённый быть звездой",
+    "year" : "2011",
+    "rating" : "10",
+    "reviews" : "40",
+    "duration" : "97",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "14",
+    "name" : "Ночь в Париже",
+    "year" : "2016",
+    "rating" : "50",
+    "reviews" : "50",
+    "duration" : "97",
+    "id_country" : "2"
+  },
+  {
+    "id_film" : "15",
+    "name" : "Лунная афера",
+    "year" : "2015",
+    "rating" : "44",
+    "reviews" : "61",
+    "duration" : "96",
+    "id_country" : "2"
+  },
+  {
+    "id_film" : "16",
+    "name" : "Дело о пеликанах",
+    "year" : "1993",
+    "rating" : "51",
+    "reviews" : "70",
+    "duration" : "141",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "17",
+    "name" : "Развод по-итальянски",
+    "year" : "1961",
+    "rating" : "100",
+    "reviews" : "80",
+    "duration" : "105",
+    "id_country" : "4"
+  },
+  {
+    "id_film" : "18",
+    "name" : "Двенадцатая ночь",
+    "year" : "2012",
+    "rating" : "78",
+    "reviews" : "88",
+    "duration" : "186",
+    "id_country" : "3"
+  },
+  {
+    "id_film" : "19",
+    "name" : "Сказ про Федота-Стрельца",
+    "year" : "2001",
+    "rating" : "32",
+    "reviews" : "49",
+    "duration" : "102",
+    "id_country" : "5"
+  },
+  {
+    "id_film" : "20",
+    "name" : "Тирапия любовью",
+    "year" : "2010",
+    "rating" : "29",
+    "reviews" : "68",
+    "duration" : "97",
+    "id_country" : "5"
+  },
+  {
+    "id_film" : "21",
+    "name" : "Одиссея Жака кустоЖ Мир тишины",
+    "year" : "1956",
+    "rating" : "42",
+    "reviews" : "79",
+    "duration" : "86",
+    "id_country" : "2"
+  },
+  {
+    "id_film" : "22",
+    "name" : "Поезд",
+    "year" : "1973",
+    "rating" : "67",
+    "reviews" : "77",
+    "duration" : "101",
+    "id_country" : "2"
+  },
+  {
+    "id_film" : "23",
+    "name" : "Босс ниггер",
+    "year" : "1975",
+    "rating" : "15",
+    "reviews" : "82",
+    "duration" : "87",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "24",
+    "name" : "Идиот",
+    "year" : "1958",
+    "rating" : "50",
+    "reviews" : "80",
+    "duration" : "124",
+    "id_country" : "1"
+  },
+  {
+    "id_film" : "25",
+    "name" : "Земля",
+    "year" : "2007",
+    "rating" : "86",
+    "reviews" : "81",
+    "duration" : "90",
+    "id_country" : "3"
+  },
+  {
+    "id_film" : "26",
+    "name" : "Интерстеллар",
+    "year" : "2014",
+    "rating" : "71",
+    "reviews" : "85",
+    "duration" : "169",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "27",
+    "name" : "Земляне",
+    "year" : "2005",
+    "rating" : "87",
+    "reviews" : "87",
+    "duration" : "95",
+    "id_country" : "0"
+  },
+  {
+    "id_film" : "28",
+    "name" : "Гамильтон",
+    "year" : "2015",
+    "rating" : "89",
+    "reviews" : "91",
+    "duration" : "150",
+    "id_country" : "0"
+  }
+]

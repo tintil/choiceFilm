@@ -1,0 +1,218 @@
+[
+  {
+    "id_film" : "0",
+    "id_genre" : "7"
+  },
+  {
+    "id_film" : "0",
+    "id_genre" : "8"
+  },
+  {
+    "id_film" : "0",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "0",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "1",
+    "id_genre" : "7"
+  },
+  {
+    "id_film" : "1",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "1",
+    "id_genre" : "2"
+  },
+  {
+    "id_film" : "1",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "2",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "3",
+    "id_genre" : "11"
+  },
+  {
+    "id_film" : "3",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "3",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "4",
+    "id_genre" : "6"
+  },
+  {
+    "id_film" : "4",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "5",
+    "id_genre" : "0"
+  },
+  {
+    "id_film" : "5",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "6",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "6",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "7",
+    "id_genre" : "1"
+  },
+  {
+    "id_film" : "8",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "9",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "9",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "10",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "11",
+    "id_genre" : "7"
+  },
+  {
+    "id_film" : "11",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "11",
+    "id_genre" : "11"
+  },
+  {
+    "id_film" : "12",
+    "id_genre" : "10"
+  },
+  {
+    "id_film" : "12",
+    "id_genre" : "0"
+  },
+  {
+    "id_film" : "13",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "14",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "14",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "15",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "16",
+    "id_genre" : "0"
+  },
+  {
+    "id_film" : "16",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "16",
+    "id_genre" : "2"
+  },
+  {
+    "id_film" : "17",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "17",
+    "id_genre" : "6"
+  },
+  {
+    "id_film" : "17",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "18",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "19",
+    "id_genre" : "11"
+  },
+  {
+    "id_film" : "19",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "20",
+    "id_genre" : "6"
+  },
+  {
+    "id_film" : "21",
+    "id_genre" : "3"
+  },
+  {
+    "id_film" : "22",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "23",
+    "id_genre" : "1"
+  },
+  {
+    "id_film" : "23",
+    "id_genre" : "5"
+  },
+  {
+    "id_film" : "24",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "25",
+    "id_genre" : "3"
+  },
+  {
+    "id_film" : "26",
+    "id_genre" : "11"
+  },
+  {
+    "id_film" : "26",
+    "id_genre" : "4"
+  },
+  {
+    "id_film" : "26",
+    "id_genre" : "9"
+  },
+  {
+    "id_film" : "27",
+    "id_genre" : "3"
+  },
+  {
+    "id_film" : "28",
+    "id_genre" : "8"
+  },
+  {
+    "id_film" : "",
+    "id_genre" : ""
+  }
+]

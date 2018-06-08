@@ -1,0 +1,50 @@
+[
+  {
+    "id_genre" : "0",
+    "name" : "thriller"
+  },
+  {
+    "id_genre" : "1",
+    "name" : "western"
+  },
+  {
+    "id_genre" : "2",
+    "name" : "detective"
+  },
+  {
+    "id_genre" : "3",
+    "name" : "documentary"
+  },
+  {
+    "id_genre" : "4",
+    "name" : "drama"
+  },
+  {
+    "id_genre" : "5",
+    "name" : "comedy"
+  },
+  {
+    "id_genre" : "6",
+    "name" : "melodrama"
+  },
+  {
+    "id_genre" : "7",
+    "name" : "cartoon"
+  },
+  {
+    "id_genre" : "8",
+    "name" : "musical"
+  },
+  {
+    "id_genre" : "9",
+    "name" : "adventure"
+  },
+  {
+    "id_genre" : "10",
+    "name" : "horrors"
+  },
+  {
+    "id_genre" : "11",
+    "name" : "fantastic"
+  }
+]
